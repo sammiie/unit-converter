@@ -22,7 +22,7 @@ data.grid(row=0, column=1)
 # Label for unit to
 variable = StringVar(window)
 variable.set("Mile") # Default Value
-input_options = OptionMenu(window, variable, "Mile", "Pound", "Feet", "Meter", "Gallon")
+input_options = OptionMenu(window, variable, "Mile", "Pound", "Feet", "Meter", "Gallon", "Kilometer")
 input_options.grid(row=0, column=2)
 # unit_label = Label(text="Miles", font=("Arial", 15, "bold"))
 # unit_label.grid(row=0, column=2)
@@ -36,7 +36,7 @@ result_label.grid(row=1, column=1)
 
 variable = StringVar(window)
 variable.set("Mile") # Default Value
-output_options = OptionMenu(window, variable, "Mile", "Pound", "Feet", "Meter", "Gallon")
+output_options = OptionMenu(window, variable, "Mile", "Pound", "Feet", "Meter", "Gallon", "Kilometer")
 output_options.grid(row=1, column=2)
 # km_label = Label(text="Km", font=("Arial", 15, "bold"))
 # km_label.grid(row=1, column=2)
