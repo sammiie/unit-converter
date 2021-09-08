@@ -21,8 +21,8 @@ data.grid(row=0, column=1)
 
 # Label for unit to
 variable = StringVar(window)
-variable.set("Mile") # Default Value
-input_options = OptionMenu(window, variable, "Mile", "Pound", "Feet", "Meter", "Gallon", "Kilometer")
+variable.set("Mile")  # Default Value
+input_options = OptionMenu(window, variable, "Mile", "Pound", "Feet", "Meter", "Gallon", "Kilometer", "Celsius")
 input_options.grid(row=0, column=2)
 # unit_label = Label(text="Miles", font=("Arial", 15, "bold"))
 # unit_label.grid(row=0, column=2)
@@ -35,8 +35,8 @@ result_label = Label(text="0", font=("Arial", 15, "bold"))
 result_label.grid(row=1, column=1)
 
 variable = StringVar(window)
-variable.set("Mile") # Default Value
-output_options = OptionMenu(window, variable, "Mile", "Pound", "Feet", "Meter", "Gallon", "Kilometer")
+variable.set("Mile")  # Default Value
+output_options = OptionMenu(window, variable, "Mile", "Pound", "Feet", "Meter", "Gallon", "Kilometer", "Celsius")
 output_options.grid(row=1, column=2)
 # km_label = Label(text="Km", font=("Arial", 15, "bold"))
 # km_label.grid(row=1, column=2)
@@ -45,7 +45,5 @@ output_options.grid(row=1, column=2)
 calculate_btn = Button(text="Calculate", command=calculate)
 calculate_btn.grid(row=2, column=1)
 calculate_btn.config(padx=10, pady=10)
-
-
 
 window.mainloop()
