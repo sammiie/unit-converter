@@ -5,10 +5,24 @@ window.title("Unit Converter")
 window.minsize(width=400, height=200)
 window.config(padx=20, pady=20)
 
+units = ["Mile", "Pound", "Feet", "Meter", "Gallon", "Kilometer", "Celsius" "Kilogram", "gram"]
 
-def calculate():
+
+def mile_kilo():
     result = float(data.get()) * 1.60934
     result_label.config(text=f"{result}")
+
+
+def mile_feet():
+    result = float(data.get()) * 1
+    result_label.config(text=f"{result}")
+
+
+def calculate():
+    if input_variable.get() == "Mile" and output_variable.get() == "Kilometer":
+        mile_kilo()
+    elif input_variable.get() == "Mile" and output_variable.get() == "Feet":
+        mile_feet()
 
 
 convert_label = Label(text="Convert", font=("Arial", 15, "bold"))
@@ -19,10 +33,10 @@ convert_label.config(padx=20, pady=20)
 data = Entry(width=20)
 data.grid(row=0, column=1)
 
-# Label for unit to
-variable = StringVar(window)
-variable.set("Mile")  # Default Value
-input_options = OptionMenu(window, variable, "Mile", "Pound", "Feet", "Meter", "Gallon", "Kilometer", "Celsius")
+# Label for unit to convert
+input_variable = StringVar(window)
+input_variable.set("Mile")  # Default Value
+input_options = OptionMenu(window, input_variable, *units)
 input_options.grid(row=0, column=2)
 # unit_label = Label(text="Miles", font=("Arial", 15, "bold"))
 # unit_label.grid(row=0, column=2)
@@ -34,9 +48,9 @@ equal_label.grid(row=1, column=0)
 result_label = Label(text="0", font=("Arial", 15, "bold"))
 result_label.grid(row=1, column=1)
 
-variable = StringVar(window)
-variable.set("Mile")  # Default Value
-output_options = OptionMenu(window, variable, "Mile", "Pound", "Feet", "Meter", "Gallon", "Kilometer", "Celsius")
+output_variable = StringVar(window)
+output_variable.set("Kilometer")  # Default Value
+output_options = OptionMenu(window, output_variable, *units)
 output_options.grid(row=1, column=2)
 # km_label = Label(text="Km", font=("Arial", 15, "bold"))
 # km_label.grid(row=1, column=2)
